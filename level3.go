@@ -85,16 +85,6 @@ func main() {
 			fmt.Println(arrCitiy[1], ":", GBK2UTF8(arrCitiy[2]))
 			cities = append(cities, City{Code: arrCitiy[1], Value: GBK2UTF8(arrCitiy[2]), Children: areas})
 		}
-		// if len(matchCities) == 1 {
-		// 	fmt.Println(matchCities[0][1])
-		// 	resArea := CurlGET(indexURL + arr[1] + "/" + matchCities[0][1] + ".html")
-		// 	reArea := regexp.MustCompile(`<a href=\'\d{2}\/(.{1,30}).html\'>(.{1,30})<\/a><\/td><\/tr>`)
-		// 	matchAreas := reArea.FindAllStringSubmatch(resArea, -1)
-		// 	for _, arrArea := range matchAreas {
-		// 		fmt.Println(arrArea[1], ":", GBK2UTF8(arrArea[2]))
-		// 		cities = append(cities, Area{Code: arrArea[1], Value: GBK2UTF8(arrArea[2])})
-		// 	}
-		// }
 		fmt.Println(arr[1], ":", GBK2UTF8(arr[2]))
 		province = append(province, Province{Code: arr[1], Value: GBK2UTF8(arr[2]), Children: cities})
 	}
