@@ -7,9 +7,7 @@ import (
 	"net/http"
 	"os"
 	"regexp"
-	"strconv"
 	"strings"
-	"time"
 
 	"github.com/axgle/mahonia"
 )
@@ -89,7 +87,7 @@ func main() {
 		province = append(province, Province{Code: arr[1], Value: GBK2UTF8(arr[2]), Children: cities})
 	}
 	basedir, _ := os.Getwd()
-	fileName := strconv.FormatInt(time.Now().Unix(), 10) + ".json"
+	fileName := "2.json"
 	fmt.Println(basedir + "/" + fileName)
 	if data, err := json.Marshal(province); err == nil {
 		ioutil.WriteFile(basedir+"/"+fileName, data, 0644)
